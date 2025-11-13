@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Us - EDU-connect</title>
+<style>
+  /* Reset and Base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #e6f0fb, #1a73e8);
+    color: #0b3d6f;
+    margin: 0;
+    padding: 40px 20px 60px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .container {
+    background: white;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 40px 50px;
+    animation: fadeSlideIn 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Background animated shapes */
+  .background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.12;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .shape1 {
+    background: #3a87d6;
+    width: 220px;
+    height: 220px;
+    left: 5%;
+    top: 10%;
+    animation-name: floatUpDown;
+    animation-duration: 15s;
+  }
+  .shape2 {
+    background: #6bb8ff;
+    width: 160px;
+    height: 160px;
+    left: 75%;
+    top: 35%;
+    animation-name: floatSideToSide;
+    animation-duration: 18s;
+    animation-delay: 5s;
+  }
+  .shape3 {
+    background: #1a4ea8;
+    width: 180px;
+    height: 180px;
+    left: 50%;
+    top: 75%;
+    animation-name: floatUpDown;
+    animation-duration: 20s;
+    animation-delay: 10s;
+  }
+
+  @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px);}
+  }
+  @keyframes floatSideToSide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px);}
+  }
+
+  /* Member section style */
+  .member-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 12px;
+    background: #d9e9fc;
+    padding: 30px;
+    box-shadow: 0 8px 28px rgba(10, 61, 98, 0.15);
+  }
+  .member-info {
+    flex: 1;
+  }
+  .member-info h2 {
+    margin: 0 0 12px;
+    font-weight: 900;
+    color: #0a3d62;
+    font-size: 1.8rem;
+    letter-spacing: 0.02em;
+  }
+  .member-info .role {
+    font-weight: 700;
+    color: #2980b9;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+  .member-info p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  .member-photo {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .member-photo img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .container {
+      padding: 30px 20px;
+    }
+    .member-section {
+      flex-direction: column;
+      text-align: center;
+    }
+    .member-photo {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 20px;
+    }
+  }
+
+</style>
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+
+  <main class="container" aria-label="About Us members">
+    <section class="member-section" aria-label="Mann N. Joshi">
+      <div class="member-info">
+        <h2>Mann N. Joshi</h2>
+        <div class="role">Lead Developer & Designer</div>
+        <p>
+          Mann is a passionate web developer and designer with a deep interest in creating interactive and visually appealing websites. He enjoys exploring new technologies, experimenting with animations, and continuously learning innovative ways to enhance user experience.
+          As the lead developer and designer of <strong>EDU-connect</strong>, Mann has built the entire platform using modern web technologies. His dedication to smooth design, smart functionality, and engaging interactivity ensures every visitor has a delightful experience.
+        </p>
+      </div>
+      <div class="member-photo" aria-label="Photo of Mann N. Joshi">
+        <img src="https://via.placeholder.com/220" alt="Photo of Mann N. Joshi" />
+      </div>
+    </section>
+
+    <section class="member-section" aria-label="Neel S. Birhade">
+      <div class="member-info">
+        <h2>Neel S. Birhade</h2>
+        <div class="role">Presenter & Spokesperson</div>
+        <p>
+          Neel is an enthusiastic public speaker who excels at communicating ideas with confidence and clarity. He actively participates in various speech and presentation competitions, developing strong communication skills and stage presence.
+          For <strong>EDU-connect</strong>, Neel serves as the main presenter and spokesperson, introducing the project's features and vision to students and teachers. His confidence and ability to express ideas effectively make him the voice of the team.
+        </p>
+      </div>
+      <div class="member-photo" aria-label="Photo of Neel S. Birhade">
+        <img src="https://via.placeholder.com/220" alt="Photo of Neel S. Birhade" />
+      </div>
+    </section>
+
+    <section class="member-section" aria-label="Darshan S. Kumbhar">
+      <div class="member-info">
+        <h2>Darshan S. Kumbhar</h2>
+        <div class="role">Quality Tester & File Manager</div>
+        <p>
+          Darshan is a reliable and detail-oriented member of the team who manages and organizes the files used in the <strong>EDU-connect</strong> website. He ensures every file is properly stored, updated, and easy to access when needed.
+          In addition to handling resources, Darshan serves as the quality tester, carefully reviewing and testing the site after development to ensure all features work correctly and smoothly. His attention to detail helps maintain the overall quality and stability of the project.
+        </p>
+      </div>
+      <div class="member-photo" aria-label="Photo of Darshan S. Kumbhar">
+        <img src="https://via.placeholder.com/220" alt="Photo of Darshan S. Kumbhar" />
+      </div>
+    </section>
+
+    <section class="member-section" aria-label="Representative Soham Bhosle">
+      <div class="member-info">
+        <h2>Soham Bhosle</h2>
+        <div class="role">Representative</div>
+        <p>
+          Soham Bhosle is an enthusiastic and dedicated representative who loves to participate in each and every competition. With a passion for engagement, he consistently takes initiative to represent the team at various events, contributing his energy and spirit to foster a culture of active participation.
+          His commitment to involvement highlights the importance of representation and team spirit in all activities and competitions the EDU-connect community participates in.
+        </p>
+      </div>
+      <div class="member-photo" aria-label="Photo of Soham Bhosle">
+        <img src="https://via.placeholder.com/220" alt="Photo of Soham Bhosle" />
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YouTube Channels - EDU-connect Theme</title>
+<style>
+  /* Reset and Base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, h2, p, a, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 50px 20px 40px 20px;
+    background: linear-gradient(to bottom right, #d9e9fc, #3a87d6);
+    color: #0b3d6f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background shapes removed for simplicity */
+
+  /* Page header */
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #0b3d6f;
+    margin-bottom: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(10, 45, 72, 0.3);
+  }
+  
+  p.tagline {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #003c8f;
+    margin-bottom: 48px;
+    letter-spacing: 0.04em;
+    font-style: bold;
+  }
+
+  /* YouTube channels buttons container */
+  .youtube-channels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .channel-btn {
+    background: linear-gradient(135deg, #1a73e8, #004aad);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 16px 52px;
+    border-radius: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 74, 173, 0.52);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    user-select: none;
+    text-align: center;
+    width: 100%;
+  }
+  .channel-btn:hover, .channel-btn:focus {
+    outline: none;
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #004aad, #1a73e8);
+    box-shadow: 0 14px 34px rgba(0, 74, 173, 0.75);
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 480px) {
+    body {
+      padding: 40px 15px 30px 15px;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+    p.tagline {
+      font-size: 1.1rem;
+    }
+    .channel-btn {
+      font-size: 1rem;
+      padding: 14px 40px;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Featured YouTube Channels</h1>
+  <p class="tagline">Connect with top educational creators</p>
+  <section aria-label="YouTube Channels" class="youtube-channels">
+    <a href="https://youtube.com/dearsir?siez=AH3VPlx3fWn0rC" target="_blank" rel="noopener" class="channel-btn" aria-label="Dear Sir YouTube Channel">Dear Sir</a>
+    <a href="https://youtube.com/physicswallah?si=MjNSeX51lHtyMc" target="_blank" rel="noopener" class="channel-btn" aria-label="Physics Wallah YouTube Channel">Physics Wallah</a>
+    <a href="https://youtube.com/jrtutorials?si=FeMgdRniYvEjiT-" target="_blank" rel="noopener" class="channel-btn" aria-label="JR Tutorials YouTube Channel">JR Tutorials</a>
+    <a href="https://youtube.com/exphub?si=7hNLaCrkbLk1pGES" target="_blank" rel="noopener" class="channel-btn" aria-label="ExPHub YouTube Channel">ExPHub</a>
+  </section>
+</body>
+</html>
