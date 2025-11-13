@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EDU-connect Home</title>
+<style>
+  /* Reset and Base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 50px 20px 40px 20px;
+    background: linear-gradient(to bottom right, #e6f0fb, #1a73e8);
+    color: #0b3d6f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Background animated shapes */
+  .background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.12;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .shape1 {
+    background: #3a87d6;
+    width: 220px;
+    height: 220px;
+    left: 5%;
+    top: 10%;
+    animation-name: floatUpDown;
+    animation-duration: 15s;
+  }
+  .shape2 {
+    background: #6bb8ff;
+    width: 160px;
+    height: 160px;
+    left: 75%;
+    top: 35%;
+    animation-name: floatSideToSide;
+    animation-duration: 18s;
+    animation-delay: 5s;
+  }
+  .shape3 {
+    background: #1a4ea8;
+    width: 180px;
+    height: 180px;
+    left: 50%;
+    top: 75%;
+    animation-name: floatUpDown;
+    animation-duration: 20s;
+    animation-delay: 10s;
+  }
+
+  @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px);}
+  }
+  @keyframes floatSideToSide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px);}
+  }
+
+  /* Fade-in slide-up animation */
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fadeUp {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-name: fadeSlideUp;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-duration: 1s;
+  }
+  .fadeUp.delay-1 { animation-delay: 0.1s; }
+  .fadeUp.delay-2 { animation-delay: 0.3s; }
+  .fadeUp.delay-3 { animation-delay: 0.5s; }
+  .fadeUp.delay-4 { animation-delay: 0.7s; }
+  .fadeUp.delay-5 { animation-delay: 0.9s; }
+
+  /* Logo container */
+  .logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(10, 45, 79, 0.3);
+    margin-bottom: 30px;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(10, 61, 98, 0.45));
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .logo:hover img {
+    transform: scale(1.07);
+  }
+
+  /* School name */
+  .school-name {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #0b3d6f;
+    margin: 0 0 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(10, 45, 72, 0.3);
+  }
+
+  /* Tagline */
+  .tagline {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #003c8f;
+    margin: 4px 0 32px;
+    font-style: bold;
+    letter-spacing: 0.04em;
+  }
+
+  /* Description */
+  .description {
+    max-width: 670px;
+    font-size: 1.1rem;
+    line-height: 1.78;
+    color: #0a1a3c;
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 0 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* Continue button */
+  .continue-btn {
+    background: linear-gradient(135deg, #1a73e8, #004aad);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 16px 52px;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 74, 173, 0.52);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    user-select: none;
+    display: block;
+    margin: 0 auto 48px;
+  }
+  .continue-btn:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #004aad, #1a73e8);
+    box-shadow: 0 14px 34px rgba(0, 74, 173, 0.75);
+  }
+
+  /* Info buttons container */
+  .info-buttons {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  /* School Info and About Us buttons */
+  .info-btn {
+    background: #ffffff;
+    border: 2px solid #1a73e8;
+    color: #1a73e8;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 14px 36px;
+    border-radius: 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(26, 115, 232, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+  .info-btn:hover, .info-btn:focus {
+    background-color: #1a73e8;
+    color: white;
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Responsive adjustments */
+  @media(max-width: 700px) {
+    .school-name {
+      font-size: 2.2rem;
+    }
+    .tagline {
+      font-size: 1.15rem;
+    }
+    .description {
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      padding: 0 8px;
+    }
+    .continue-btn {
+      width: 90%;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+    }
+    .info-buttons {
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
+      margin: 0 auto 32px;
+    }
+    .info-btn {
+      width: 100%;
+      padding: 16px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Background shapes -->
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+
+  <div class="logo fadeUp delay-1" aria-label="EDU-connect Logo">
+    <img src="https://8upload.com/image/6901d1e284f9e/image-1.png" alt="EDU-connect School Logo" />
+  </div>
+  <h1 class="school-name fadeUp delay-2">EDU-connect</h1>
+  <p class="tagline fadeUp delay-3">We connect you to education by internet</p>
+  <p class="description fadeUp delay-4">
+    We created a website to give online education for students in grades 7 through 10, including a quiz zone, e-textbooks, YouTube video lectures, and Perplexity AI support. This website is accessible to all students, although it is only available to P.B.A. English-medium schools.
+  </p>
+
+  <button class="continue-btn fadeUp delay-5" aria-label="Continue to main site or next page">Continue</button>
+  
+  <div class="info-buttons fadeUp delay-5" role="region" aria-label="School information and About Us">
+    <button class="info-btn" aria-label="School Information Button" onclick="alert('School information content coming soon!')">School Info</button>
+    <button class="info-btn" aria-label="About Us Button" onclick="alert('About Us page coming soon!')">About Us</button>
+  </div>
+</body>
+</html>
