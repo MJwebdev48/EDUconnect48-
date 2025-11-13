@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EDU-connect | Choose Wisely</title>
+  <style>
+    /* Base and reset */
+    body {
+      margin: 0;
+      padding: 50px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafc;
+      color: #0a3d62;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 60px;
+      user-select: none;
+      animation: fadeSlideIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Container for buttons */
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* Common button styles */
+    .animated-btn {
+      background: linear-gradient(135deg, #3c6382, #0a3d62);
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 20px 50px;
+      border: none;
+      border-radius: 35px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(10, 61, 98, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      user-select: none;
+      opacity: 0;
+      animation: fadeSlideIn 1s ease forwards;
+    }
+
+    /* Stagger button animations */
+    .animated-btn:nth-child(1) { animation-delay: 0.15s; }
+    .animated-btn:nth-child(2) { animation-delay: 0.35s; }
+    .animated-btn:nth-child(3) { animation-delay: 0.55s; }
+    .animated-btn:nth-child(4) { animation-delay: 0.75s; }
+    .animated-btn:nth-child(5) { animation-delay: 0.95s; }
+
+    /* Hover and active effects */
+    .animated-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 30px rgba(10, 61, 98, 0.75);
+      background: linear-gradient(135deg, #0a3d62, #3c6382);
+    }
+    .animated-btn:active {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(10, 61, 98, 0.7);
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
+      .animated-btn {
+        font-size: 1.1rem;
+        padding: 18px 30px;
+        width: 100%;
+        max-width: 300px;
+      }
+      .button-container {
+        gap: 30px;
+      }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1><strong>Study Materials and AI</strong></h1>
+  <div class="button-container">
+    <button class="animated-btn" onclick="location.href='ebooks.html'">E-textbooks</button>
+    <button class="animated-btn" onclick="location.href='video-lectures.html'">Video Lectures</button>
+    <button class="animated-btn" onclick="location.href='Basics in AI.html'">Basics in AI</button>
+    <button class="animated-btn" onclick="location.href='perplexity-ai.html'">Perplexity AI</button>
+  </div>
+</body>
+</html>
